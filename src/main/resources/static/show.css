@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+div.all-ground{
+	background-color:green;
+	width:500px;
+	color:#FFFFCC
+}
+
+div.card{
+	color:#000000;
+	text-align: center;
+	background-color:#FFFFCC;
+}
+
+#retry{
+	margin-left:160px;
+}
+
+#toanswer{
+	margin-left:160px;
+}
+
+#resultMessage{
+	text-align: center;
+}
+#title{
+	text-align: center;
+}
