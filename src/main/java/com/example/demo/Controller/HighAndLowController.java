@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.domain.Cards;
+import com.example.demo.repository.HnLRepository;
+
 
 @Controller
 @RequestMapping("/hnl")
@@ -18,8 +21,13 @@ public class HighAndLowController {
 	@Autowired
 	private HttpSession session; 
 	
+	@Autowired
+	private HnLRepository repository;
+	
 	@RequestMapping("")
 	public String showGameScreen(Model model) {
+		
+		
 		
 		return showFirstNum(model);
 	}
@@ -31,7 +39,12 @@ public class HighAndLowController {
 	    int firstNum = rand.nextInt(13) + 1;
 	    System.out.println(firstNum);
 	    session.setAttribute("firstNum", firstNum);
-		
+	    
+	    Cards card = new Cards();
+	    card = repository.findCard(firstNum);
+	    String imagepath = card.getImagepath();
+	    session.setAttribute("imagepathOfFirstNum", imagepath);
+	    
 		return "showResult";
 	}
 	
@@ -47,6 +60,11 @@ public class HighAndLowController {
 			Random rand = new Random();
 			int secondNum = rand.nextInt(13) + 1;
 			model.addAttribute("secondNum", secondNum);
+			
+			Cards card = new Cards();
+		    card = repository.findCard(secondNum);
+		    String imagepath = card.getImagepath();
+		    session.setAttribute("imagepathOfSecondNum", imagepath);
 			
 			
 			int firstNumInt = Integer.parseInt(firstNum);

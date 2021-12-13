@@ -1,0 +1,29 @@
+create DATABASE hnl;
+
+use hnl;
+
+create user hnluser@localhost identified by 'hnluser';
+grant all on hnl.* to hnluser@localhost;
+
+mysql -u hnluser -p hnluser;
+
+
+CREATE TABLE hnl.cards (
+id int PRIMARY KEY,
+number int,
+mark varchar(10),
+imagepath varchar(10));
+
+INSERT INTO cards VALUES(1,1,'spade','spade-a');
+INSERT INTO cards VALUES(2,2,'spade','spade-2');
+INSERT INTO cards VALUES(3,3,'spade','spade-3');
+INSERT INTO cards VALUES(4,4,'spade','spade-4');
+INSERT INTO cards VALUES(5,5,'spade','spade-5');
+INSERT INTO cards VALUES(6,6,'spade','spade-6');
+INSERT INTO cards VALUES(7,7,'spade','spade-7');
+INSERT INTO cards VALUES(8,8,'spade','spade-8');
+INSERT INTO cards VALUES(9,9,'spade','spade-9');
+INSERT INTO cards VALUES(10,10,'spade','spade-10');
+INSERT INTO cards VALUES(11,11,'spade','spade-j');
+INSERT INTO cards VALUES(12,12,'spade','spade-q');
+INSERT INTO cards VALUES(13,13,'spade','spade-k');

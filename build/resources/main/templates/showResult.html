@@ -23,6 +23,9 @@
 	<div class="col mb-4">
 	<div class="card">
 	<div th:text="${session.firstNum}"></div>
+	<div class="image-size">
+	<img class="img-fluid" th:src="@{/image/}+${session.imagepathOfFirstNum}+'.png'">
+	</div>
 	</div>
 	</div>
 	<input type="hidden" th:value="${session.firstNum}" name="firstNum"></td></tr>
